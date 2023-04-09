@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Tính hoa hồng theo mức doanh thu của cửa hàng A</h2>
+<p>Mức tham khảo:</p>
+Doanh thu từ 0 – 10 triệu đồng, nhận hoa hồng 3%<br>
+Doanh thu từ 10 – 30 triệu đồng, nhận hoa hồng 5%<br>
+Doanh thu trên 30 triệu đồng sẽ nhận hoa hồng 7%<br>
+Nhập số doanh thu của cửa hàng (triệu đồng):<input id="doanhThu"><br>
+<button onclick="kiem_tra()">Kiểm tra</button>
+<h4 id="hien"></h4>
+</body>
+</html>
+<script>
+  function kiem_tra(){
+    let a = parseFloat(document.getElementById("doanhThu").value);
+    let tien;
+    let hien= document.getElementById("hien");
+    switch (true){
+      case (a < 10):
+        tien= a * 3 / 100;
+        hien.innerText = "Số tiền hoa hồng bạn nhận được là: " + tien + " triệu đồng";
+        break;
+        case (a < 30):
+            tien= 9 * 3 / 100 + (a - 9) * 5/100 ;
+            hien.innerText = "Số tiền hoa hồng bạn nhận được là: " + tien + " triệu đồng";
+            break;
+        default:
+            tien= 9 * 3 / 100 + 29 * 5/100 + (a- 29) * 7/100 ;
+            hien.innerText = "Số tiền hoa hồng bạn nhận được là: " + tien + " triệu đồng";
+            break;
+    }
+  }
+
+</script>

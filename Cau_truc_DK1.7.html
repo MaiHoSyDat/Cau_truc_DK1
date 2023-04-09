@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Tính cước điênh thoại cho một hộ  gia đình</h2>
+<p>Bảng giá tham khảo:</p><br>
+Phí thuê bao bắt buộc là 25 nghìn. <br>
+600 đồng cho mỗi gọi của 50 phút đầu tiên.<br>
+400 đồng cho mỗi phút gọi của 150 phút tiếp theo.<br>
+200 đồng cho bất kỳ mỗi phút nào sau 200 phút đầu tiên.<br>
+Nhập số phút cần kiểm tra: <input id="phut">
+<button onclick="kiem_tra()">Kiểm tra</button>
+<h4 id="hien_thi"></h4>
+</body>
+</html>
+<script>
+function kiem_tra(){
+  let a =document.getElementById("phut").value;
+  let b;
+  let soA= parseInt(a);
+
+
+  let hien_thi= document.getElementById("hien_thi");
+  switch (true){
+    case (soA <= 50):
+      b = soA * 600;
+      break;
+    case (soA <= 200):
+      b = 50 * 600 + (soA - 50) * 400;
+      break;
+    case (soA >200):
+      b = 50 * 600 + 150 * 400 + (soA - 200) * 200;
+      break;
+  }
+  let soB = parseInt(b)
+  let gia = soB + 25000;
+  hien_thi.innerText = " Số tiền bạn phải trả là : " + gia + "đồng"
+}
+</script>

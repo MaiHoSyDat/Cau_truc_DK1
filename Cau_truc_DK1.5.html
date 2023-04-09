@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+  let a = parseFloat(prompt("Nhập điểm bài kiểm tra 15'"));
+  let b = parseFloat(prompt("Nhập điểm bài thi giữa kì"));
+  let c = parseFloat(prompt("Nhập điểm bài thi cuối kì"));
+  let tb = (a + b + 2 * c)/4
+
+  if (tb >= 8){
+      alert("Học lực của bạn loại giỏi!");
+  }else if(6.5 <= tb ){
+      alert("Học lực của bạn loại khá!");
+  }else if(4.5 <= tb ){
+      alert("Học lực của bạn loại trung bình!");
+  }else {
+      alert("Học lực của bạn loại yếu!");
+  }
+</script>
